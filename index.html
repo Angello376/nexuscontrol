@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="no-referrer" />
+  <title>NexusControl</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="loginPage" class="login-page">
+    <div class="login-bg-mark">N</div>
+    <section class="hero-panel">
+      <div class="brand-line"><img src="icons/letraN.png" onerror="this.style.display='none'" alt="N"/><span>NEXUSFIT</span></div>
+      <h1>FORJADO PARA A PERFORMANCE.</h1>
+      <p>Onde disciplina, performance e evolução se encontram em uma experiência feita para academias de alto nível.</p>
+      <div class="system-online">
+        <span class="online-dot"></span>
+        <div><strong>Sistema 24 horas</strong><small>Online · operação no ar</small></div>
+      </div>
+    </section>
+    <form class="login-card" id="loginForm">
+      <img class="logo-main" src="icons/logo.png" alt="NexusFit" />
+      <h2>Acesso seguro</h2>
+      <p>Entre com sua conta NexusControl</p>
+      <label>E-mail<input type="email" id="email" placeholder="seuemail@nexusfit.com" autocomplete="username" required /></label>
+      <label>Senha<input type="password" id="senha" placeholder="Digite sua senha" autocomplete="current-password" minlength="3" required /></label>
+      <button class='login-submit' type="submit">ENTRAR</button>
+      <small><button type='button' class='support-btn-login' onclick='openSupport()'>Suporte</button>
+      Ambiente de demonstração protegido para apresentação acadêmica.</small>
+      <footer class="project-rights login-rights">
+        <strong>© 2026 NexusFit Technologies</strong>
+        <span>Desenvolvido por:</span>
+        <b>Angello Augusto e Gabriel Cabral</b>
+        <span>Faculdade:</span>
+        <b>CRUZEIRO DO SUL — SÃO MIGUEL</b>
+      </footer>
+    </form>
+  </div>
+
+  <main id="app" class="app hidden">
+    <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">☰ Menu</button>
+    <aside class="sidebar" id="sidebar">
+      <div class="side-brand"><img src="icons/letraN.png" alt="N"/><div><b>NexusControl</b><span id="roleBadge">Admin</span></div></div>
+      <nav id="menu"></nav>
+      <button class="logout" onclick="logout()">Sair</button>
+    </aside>
+    <div class="mobile-backdrop" id="mobileBackdrop" onclick="toggleMobileMenu(false)"></div>
+    <section class="workspace">
+      <header class="topbar">
+        <div><span class="eyebrow">NexusFit Command Center</span><h1 id="pageTitle">Dashboard</h1></div>
+        <div class="user-pill"><img src="icons/letraN.png" onerror="this.style.display='none'"/> <span id="userName"></span></div>
+      </header>
+      <section id="content"></section>
+      <footer class="project-rights app-rights">
+        <strong>© 2026 NexusFit Technologies</strong>
+        <span>Desenvolvido por: <b>Angello Augusto e Gabriel Cabral</b></span>
+        <span>Faculdade: <b>CRUZEIRO DO SUL — SÃO MIGUEL</b></span>
+      </footer>
+    </section>
+  </main>
+    <script src="js/app.js"></script>
+
+<div id="supportModal" class="support-modal hidden">
+  <div class="support-box">
+    <button class="support-close" onclick="closeSupport()">×</button>
+    <span class="eyebrow">Suporte NexusFit</span>
+    <h2>Atendimento online</h2>
+
+    <div class="support-start" id="supportStart">
+      <input id="supportName" class="input" placeholder="Seu nome">
+      <input id="supportEmail" class="input" placeholder="Seu e-mail">
+      <select id="supportSubject">
+        <option>Login ou senha</option>
+        <option>Pagamento</option>
+        <option>Plano</option>
+        <option>Treino</option>
+        <option>Nutrição</option>
+        <option>Outro assunto</option>
+      </select>
+      <button onclick="startSupport()">Iniciar atendimento</button>
+    </div>
+
+    <div class="support-chat hidden" id="supportChat">
+      <div class="support-messages" id="supportMessages"></div>
+      <div class="support-send">
+        <input id="supportText" class="input" placeholder="Digite sua dúvida...">
+        <button onclick="sendSupportMessage()">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
